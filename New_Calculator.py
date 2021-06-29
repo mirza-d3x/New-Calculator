@@ -42,3 +42,19 @@ def buttonClickHandler(buttonText):
 
     screenText=screenText + buttonText
     screenText.set(screenText)
+
+def main():
+    #get text from screen
+    screenText=screen.get()
+    screen.set('')
+    #replaced x with * and ÷ with / inorder to easily pass to aval function
+    screenText=screenText.replace('X', '*')
+    screenText=screenText.replace('÷', '/')
+    try:
+        #generating result
+        answer=round(eval(screenText),2)
+    except:
+        #if any errorr occurs
+        answer="Error"
+    #setting text to screen
+    screen.set(str(answer))
