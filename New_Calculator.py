@@ -17,3 +17,28 @@ def clearScreenByOne():
 #clear Full Charecter
 def clearScreen():
     screen.set('')
+
+
+
+#This function will handle the button click
+def buttonClickHandler(buttonText):
+    screenText=screen.get()
+    #if button ± is clicked then multiply the value will-
+    if buttonText == '±':
+        screenText = str(-(float(screenText)))
+        #setting result to screen
+        return
+    #if button sqrt is click then finds square root of number in screen and set result back to screen
+    if buttonText == '√':
+        screenText = str(math.sqrt(float(screenText)))
+        screen.set(screenText)
+        return
+    #if operator is already present at last of text on screen then it will do nothing
+    if buttonText in ['+', '-', 'X', '÷']:
+        return
+
+    #if user tried to type 2 dots
+    screenText=screenText.replace('..', '.')
+
+    screenText=screenText + buttonText
+    screenText.set(screenText)
