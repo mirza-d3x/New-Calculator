@@ -31,7 +31,7 @@ window.title("Calculator By Mirza")
 scvalue = StringVar()
 scvalue.set("")
 f = Frame(window, padx=20, pady=20)
-screen = Entry(f, textvar= scvalue, font="luciid 50 bold", bg='light blue')
+screen = Entry(f, textvar= scvalue, font="luciid 50 bold", bg='light blue', fg='#000')
 screen.pack(fill=X, padx=20, pady=15)
 f.pack()
 
